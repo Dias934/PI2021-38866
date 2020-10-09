@@ -5,7 +5,7 @@ function inspector(obj, spacing){
     for (let idx in Object.keys(obj) ){
         member=Object.keys(obj)[idx]
         if(isPrimitive(obj[member]))
-            console.log(spacing+member +' : '+obj[member])
+            console.log(spacing+member +'= '+obj[member])
         else
             inspectObject(obj, member, spacing)
     }
@@ -15,7 +15,7 @@ function inspector(obj, spacing){
 function inspectObject(obj, member, spacing){
     if(isFunction(obj[member])){
         if(obj[member].length==0)
-            console.log(spacing+'function '+member+' = ' +obj[member]())
+            console.log(spacing+'function '+member+'= ' +obj[member]())
     }
     else if(isObject(obj[member])){
         console.log(spacing+member+' : ')
