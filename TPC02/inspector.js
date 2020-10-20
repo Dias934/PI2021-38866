@@ -24,7 +24,7 @@ function inspectObject(obj, member, spacing){
 }
 
 function isPrimitive(member){
-    return (member !== Object(member))
+    return (member !== Object(member)) //check value and type
 }
 
 function isFunction(member){
