@@ -1,0 +1,15 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "description": "packages to this tpc",
+  "main": "app02-request-async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sync-request": "^6.1.0",
+    "urllib": "^2.36.1"
+  }
+}
