@@ -57,7 +57,6 @@ function addArtist(username, artist, cb) {
         const arr = JSON.parse(buffer)
         const selected = arr.filter(user => user.username == username)
         if(selected.length == 0) return cb(new Error('There is no user ' + username))
-        console.log(arr[selected])
         const newArr=arr.map(user => {
             if(user.username == username)
                 user.artists.push(artist)
@@ -66,6 +65,7 @@ function addArtist(username, artist, cb) {
         fs.writeFile(USERS_PATH, JSON.stringify(newArr), (err)=>{
             if(err) return cb(err)
         })
+        cb(null, selected[0])
     })
 }
 

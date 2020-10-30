@@ -30,6 +30,18 @@ function getTopTracks(username, limit, cb) {
     })
 }
 
+function addArtist(username, artist, cb){
+    lastfm.searchArtist(artist, (err, matches)=>{
+        if(err) return cb(err)
+        if(matches.length==0) return cb(new Error('artist '+artist+' not found'))
+        users.addArtist(username, artist, (err, user)=>{
+            if(err) cb(err)
+            cb(null, user)
+        })
+    })
+}
+
 module.exports = {
-    getTopTracks
+    getTopTracks,
+    addArtist
 }
